@@ -1,37 +1,39 @@
-<img src="assets/avatar.png" alt="Native Rust render of a metallic gyroid modeled with Emergence CAD" width="160" align="right">
+<a href="https://www.evolvetech.dev/">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/profile-header-mobile.png">
+    <img src="assets/profile-header.png" width="1600" alt="Anthony Firn. EvolveTech: software, simulation and engineering tools. Native Emergence CAD render.">
+  </picture>
+</a>
 
-# Anthony Firn
+<p align="center">
+  <a href="https://www.evolvetech.dev/">Portfolio &amp; live demos</a> &nbsp; · &nbsp;
+  <a href="https://www.evolvetech.dev/resume/">Résumé</a> &nbsp; · &nbsp;
+  <a href="mailto:anthony@evolvetech.dev">Email</a> &nbsp; · &nbsp;
+  <a href="https://www.evolvetech.dev/play/fairground/#/about">Support the projects</a>
+</p>
 
-Lead software engineer working across full-stack products, cloud infrastructure, AI tooling, simulation and graphics. I build open-source projects through **EvolveTech** and publish browser demos so people can try the work.
+I'm a lead software engineer at **True Native Media** and build open-source projects through **EvolveTech**. My work spans full-stack products, cloud infrastructure and AI tooling, with a computer engineering background in hardware, firmware and precision manufacturing.
 
-My background is in computer engineering, with experience in hardware, firmware, software and precision manufacturing. That combination shapes projects like Emergence: geometry, physical models and the requirements someone needs to manufacture a part belong in the same engineering workflow.
+I'm interested in tools that let people inspect, build and experiment: a shared CAD design, a physics model with an error estimate, or a game you can play in your browser. **Open to remote engineering roles.**
 
-[Portfolio and live demos](https://www.evolvetech.dev/) · [Résumé](https://www.evolvetech.dev/resume/) · [Email](mailto:anthony@evolvetech.dev)
+## Selected work
 
-Open to remote engineering roles. My work spans product development, platform engineering, scientific computing and tools for other engineers.
+### [Emergence](https://github.com/anthony-firn/emergence) · simulation and collaborative CAD
 
-<br clear="right">
+A shared engineering workspace with parametric parts, branches and reviews, electrical and thermal checks, and dimensioned mechanical shop drawings. The native research engine covers fluids, optics, heat, materials, geometry, rendering and chip design.
 
-## Try the projects
+[![Emergence CAD: a parametric heat-sink assembly with mechanical, electrical, thermal and photonics inputs](assets/emergence-cad.webp)](https://www.evolvetech.dev/play/emergence/cad/)
 
-| Project | What you can try | Source |
-| --- | --- | --- |
-| [Emergence CAD](https://www.evolvetech.dev/play/emergence/cad/) | Edit a shared engineering design, add parts, branch and review changes, run electrical/thermal checks and prepare mechanical shop drawings. | [emergence](https://github.com/anthony-firn/emergence) |
-| [Emergence physics lab](https://www.evolvetech.dev/play/emergence/) | Compare optical models, evolve a fluid and inspect a cooling design with uncertainty and model-validity checks. | [emergence](https://github.com/anthony-firn/emergence) |
-| [Fairground](https://www.evolvetech.dev/play/fairground/) | Explore a decentralized social app with local AI feed ranking, creator payments, podcasts and a marketplace. | [fairground](https://github.com/anthony-firn/fairground) |
-| [Emberwake](https://www.evolvetech.dev/play/emberwake/) | Play a third-person action roguelike with procedural dungeons, combat, equipment and vertical traversal. | [emberwake](https://github.com/anthony-firn/emberwake) |
-| [Retirement Research](https://www.evolvetech.dev/play/retirement/) | Compare published retirement strategy results by spendable income, taxes and failure risk. | [retirement-research](https://github.com/anthony-firn/retirement-research) |
-| [Evolve Inbox](https://www.evolvetech.dev/play/evolve-inbox/) | Try a custom-domain email reader with fictional messages, attachments and reported sender checks. | [evolve-inbox](https://github.com/anthony-firn/evolve-inbox) |
-| [Symmetry Forge](https://www.evolvetech.dev/play/symmetry-forge/) | Compute graph automorphisms and explore familiar symmetry groups with Python running in the browser. | [symmetry-forge](https://github.com/anthony-firn/symmetry-forge) |
-| [Pulse Pop](https://www.evolvetech.dev/play/pulse-pop/) | Play a touch game built from one Expo codebase for web, iOS and Android. | [pulse-pop](https://github.com/anthony-firn/pulse-pop) |
+`Rust` `WebAssembly` `WebRTC` `CAD`
 
-## Emergence: simulation, collaborative CAD and manufacturing handoff
+[Open CAD](https://www.evolvetech.dev/play/emergence/cad/) · [Run the physics lab](https://www.evolvetech.dev/play/emergence/) · [Source](https://github.com/anthony-firn/emergence)
 
-[Emergence](https://github.com/anthony-firn/emergence) is a Rust research workspace for simulation and engineering design. A model can report its cost, validity indicator and error claim; the engine uses those to select an appropriate level of detail. Reference comparisons, unmet tolerances and modeling assumptions are part of the result.
+<details>
+<summary>Engineering workflow, drawings and current scope</summary>
 
-The native workspace covers fluids, optics, heat, materials, geometry, rendering, chip design and engineering project graphs, with CPU reference implementations and optional CUDA backends. Each domain has its own benchmarks and limitations. The browser lab compiles selected native models to WebAssembly and runs them in a Worker.
+A model can report its cost, validity indicator and error claim; the engine uses those to select an appropriate level of detail. Reference comparisons, unmet tolerances and modeling assumptions are part of the result. The Rust workspace has CPU reference implementations and optional CUDA backends, with benchmarks and limitations for each domain. The browser lab compiles selected native models to WebAssembly and runs them in a Worker.
 
-The collaborative CAD prototype adds a shared design workflow:
+The collaborative CAD prototype includes:
 
 - Parametric cooling geometry and additional box/cylinder parts, with selection, placement and undo/redo.
 - Shared mechanical, electrical and thermal inputs evaluated by the Rust project graph. Prescribed absorbed optical power and external heat enter the thermal boundary model.
@@ -40,43 +42,78 @@ The collaborative CAD prototype adds a shared design workflow:
 - A3 mechanical drawing sheets with dimensioned orthographic views, first/third-angle projection, material and finish fields, general tolerances and revision/checker information.
 - Vector SVG/PDF, analytic DXF profiles, native CAD STL and mechanical parts CSV exports.
 
-General sketch constraints, STEP/B-rep editing, GD&T authoring, PCB fabrication packages and persistent peer discovery remain unfinished. The current manufacturing handoff covers the supported mechanical shapes and still needs qualification against actual shop workflows.
+[![An A3 mechanical drawing from the CAD prototype, with orthographic views, dimensions and a revision block](assets/emergence-drawings.webp)](https://www.evolvetech.dev/play/emergence/cad/)
 
-[![Emergence CAD workspace](assets/emergence-cad.webp)](https://www.evolvetech.dev/play/emergence/cad/)
+General sketch constraints, STEP/B-rep editing, GD&T authoring, PCB fabrication packages and persistent peer discovery remain unfinished. The manufacturing handoff covers the supported mechanical shapes and still needs qualification against actual shop workflows.
 
-[Open CAD](https://www.evolvetech.dev/play/emergence/cad/) · [Run the physics lab](https://www.evolvetech.dev/play/emergence/) · [Methods and current scope](https://github.com/anthony-firn/emergence/blob/main/analysis/collaborative_cad.md)
+[Methods and current scope](https://github.com/anthony-firn/emergence/blob/main/analysis/collaborative_cad.md)
 
-## Fairground: decentralized social and direct creator payments
+</details>
 
-[Fairground](https://github.com/anthony-firn/fairground) combines social posts, media, podcasts, sponsorships and a marketplace. Signed events live on independent Nostr relays, and feed ranking runs on the reader's device. The app has a shared React/TypeScript codebase for the browser, iOS and Android.
+### [Fairground](https://github.com/anthony-firn/fairground) · decentralized social and creator payments
 
-The project includes signed sponsorship agreements, direct wallet-to-wallet USDC payments on Algorand, creator support, encrypted messages and a podcast gateway for standard RSS distribution. Contract events carry Schnorr and ML-DSA-65 signatures. The protocol, implementation and payment-hosting requirements are documented in the repository.
+A social app with independent Nostr relays, feed ranking on the reader's device, and direct creator payments. Posts, media, podcasts, sponsorships and a marketplace share a React/TypeScript codebase for the browser, iOS and Android.
 
-It is an early release. Payment integrations and gateways have their own operating requirements; the static social client and distributed event storage are separate from those integrations.
+[![Fairground running in the browser, with its social feed, media navigation and topic selection](assets/fairground.webp)](https://www.evolvetech.dev/play/fairground/)
+
+`React` `TypeScript` `Nostr` `Algorand`
 
 [Try Fairground](https://www.evolvetech.dev/play/fairground/) · [Source and protocol](https://github.com/anthony-firn/fairground)
 
-## Games and interactive graphics
+<details>
+<summary>Payments, protocol and operating requirements</summary>
 
-[Emberwake](https://github.com/anthony-firn/emberwake) is a playable Godot/Blender action-roguelike prototype. Its current browser build includes procedural dungeon geometry, a third-person camera, several starting classes, equipment, enemy roles, bosses and vertical traversal. Character animation is procedural, and the project has a TCP agent bridge for automated playtesting alongside native smoke and recovery tests.
+Fairground includes signed sponsorship agreements, direct wallet-to-wallet USDC payments on Algorand, creator support, encrypted messages and a podcast gateway for standard RSS distribution. Contract events carry Schnorr and ML-DSA-65 signatures. The repository documents the protocol, implementation and payment-hosting requirements.
 
-[![Emberwake browser gameplay](assets/emberwake.webp)](https://www.evolvetech.dev/play/emberwake/)
+It is an early release. Payment integrations and gateways have their own operating requirements; the static social client and distributed event storage are separate from those integrations.
 
-[Play Emberwake](https://www.evolvetech.dev/play/emberwake/)
+</details>
 
-[Pulse Pop](https://github.com/anthony-firn/pulse-pop) is a smaller Expo/React Native game: touch controls, timed pulses, combos and cosmetic progression. Its game rules are separated from rendering, and the same application exports to the browser.
+### [Emberwake](https://github.com/anthony-firn/emberwake) · a playable action roguelike
 
-The portfolio's animated hypercube uses WebGL with a Canvas fallback. Its renderer has bounded pixel budgets, a frame-rate ceiling, reduced-motion support and offscreen/hidden pause behavior. [The measurements and browser checks](https://github.com/anthony-firn/evolvetech.dev/blob/main/PERFORMANCE.md) document the rendering tradeoffs.
+Procedural dungeons, third-person combat, several starting classes, equipment, enemy roles, bosses and vertical traversal. Built with Godot and Blender, with procedural character animation.
 
-## Research and developer tools
+[![Emberwake gameplay: a third-person character exploring a torch-lit dungeon](assets/emberwake.webp)](https://www.evolvetech.dev/play/emberwake/)
 
-[Retirement Research](https://github.com/anthony-firn/retirement-research) uses Python and PyTorch/CUDA to study withdrawals, taxes, rebalancing and market uncertainty. Published comparisons include 2,000 reshuffled 40-year market histories and stress cases. The browser explorer presents those results; the repository documents the data pipeline, assumptions and research limitations.
+`Godot` `GDScript` `Blender`
 
-[Symmetry Forge](https://github.com/anthony-firn/symmetry-forge) explores graph automorphisms and combinatorial designs using partition refinement and exhaustive search. The browser lab runs the Python package through Pyodide in a cancellable Worker, with known groups such as the Petersen graph and the 4D hypercube as checks.
+[Play Emberwake](https://www.evolvetech.dev/play/emberwake/) · [Source](https://github.com/anthony-firn/emberwake)
 
-[Evolve Inbox](https://github.com/anthony-firn/evolve-inbox) is a receiving inbox for custom-domain email. Inbound webhooks feed Netlify Blobs storage; a password-protected reader handles formatted mail, plain text, attachments and sender-check results. Its public demo uses fictional mail. Sending and multi-user mailbox administration are outside its current scope.
+<details>
+<summary>Game testing and animation</summary>
 
-Earlier repositories include [CPU/FPGA communication examples](https://github.com/anthony-firn/CPU-FPGA-Tutorial), [LLM infrastructure with Terraform and vLLM](https://github.com/anthony-firn/deepseek-orchestrator), and [RLWE hardware design](https://github.com/anthony-firn/RLWE-HDL-Secure).
+The project has a TCP agent bridge for automated playtesting alongside native smoke and recovery tests. Character animation is procedural, and the playable browser build includes the current dungeon geometry, combat, equipment and traversal systems.
+
+</details>
+
+## More to explore
+
+| Project | Try it |
+| --- | --- |
+| [Emergence physics lab](https://github.com/anthony-firn/emergence) | [Compare optical models, evolve a fluid and inspect a cooling design](https://www.evolvetech.dev/play/emergence/), with uncertainty and model-validity checks. |
+| [Retirement Research](https://github.com/anthony-firn/retirement-research) | [Explore published retirement strategy results](https://www.evolvetech.dev/play/retirement/) by spendable income, taxes and failure risk. Python and PyTorch/CUDA research. |
+| [Symmetry Forge](https://github.com/anthony-firn/symmetry-forge) | [Compute graph automorphisms](https://www.evolvetech.dev/play/symmetry-forge/) and explore symmetry groups with Python running in the browser. |
+| [Evolve Inbox](https://github.com/anthony-firn/evolve-inbox) | [Try a custom-domain email reader](https://www.evolvetech.dev/play/evolve-inbox/) with fictional messages, attachments and reported sender checks. |
+| [Pulse Pop](https://github.com/anthony-firn/pulse-pop) | [Play the touch game](https://www.evolvetech.dev/play/pulse-pop/): timed pulses, combos and cosmetic progression from one Expo codebase for web, iOS and Android. |
+
+<details>
+<summary>Research methods, developer tools and hosting</summary>
+
+**Retirement Research** studies withdrawals, taxes, rebalancing and market uncertainty. Published comparisons include 2,000 reshuffled 40-year market histories and stress cases. The browser explorer presents those results; the repository documents the data pipeline, assumptions and research limitations.
+
+**Symmetry Forge** uses partition refinement and exhaustive search to study graph automorphisms and combinatorial designs. The browser lab runs the Python package through Pyodide in a cancellable Worker, with the Petersen graph and the 4D hypercube as checks.
+
+**Evolve Inbox** receives custom-domain email through inbound webhooks and Netlify Blobs storage. Its password-protected reader handles formatted mail, plain text, attachments and sender-check results. The public demo uses fictional mail. Sending and multi-user mailbox administration are outside its current scope.
+
+**Pulse Pop** separates game rules from rendering, and the same Expo/React Native application exports to the browser.
+
+The [portfolio](https://github.com/anthony-firn/evolvetech.dev) is buildless HTML/CSS/JavaScript with self-hosted fonts and prebuilt browser demos. Its animated hypercube uses WebGL with a Canvas fallback, bounded pixel budgets, a frame-rate ceiling, reduced-motion support and offscreen/hidden pause behavior. [Measurements and browser checks](https://github.com/anthony-firn/evolvetech.dev/blob/main/PERFORMANCE.md) document the rendering tradeoffs.
+
+GitHub Actions publishes the same static release to Netlify and Bunny. A scheduled monitor checks both providers and manages DNS failover and recovery; DNS-validated certificates keep HTTPS available on both copies.
+
+Earlier work includes [CPU/FPGA communication examples](https://github.com/anthony-firn/CPU-FPGA-Tutorial), [LLM infrastructure with Terraform and vLLM](https://github.com/anthony-firn/deepseek-orchestrator), and [RLWE hardware design](https://github.com/anthony-firn/RLWE-HDL-Secure).
+
+</details>
 
 ## Engineering background
 
@@ -97,14 +134,6 @@ I have a **B.S. in Computer Engineering from California Polytechnic State Univer
 | Simulation and graphics | Rust CPU models, WebAssembly, Web Workers, Godot, Blender, WebGL, Canvas, Pyodide |
 | Hardware and manufacturing | Firmware, FPGA/HDL work, CAD workflows and precision wire EDM |
 
-## How the portfolio runs
-
-[evolvetech.dev](https://github.com/anthony-firn/evolvetech.dev) is buildless HTML/CSS/JavaScript with self-hosted fonts and prebuilt browser demos. GitHub Actions publishes the same static release to Netlify and Bunny. A scheduled monitor checks both providers and manages DNS failover and recovery; DNS-validated certificates keep HTTPS available on both copies.
-
-The repositories include implementation details, tests and limitations so another engineer can inspect how the demos work and reproduce the relevant checks.
-
-## Contact
-
 For engineering roles or collaboration: [anthony@evolvetech.dev](mailto:anthony@evolvetech.dev).
 
-[Portfolio](https://www.evolvetech.dev/) · [Résumé](https://www.evolvetech.dev/resume/) · [Support open-source development](https://www.evolvetech.dev/play/fairground/#/about)
+[Portfolio](https://www.evolvetech.dev/) · [Résumé](https://www.evolvetech.dev/resume/) · [Support open-source development](https://www.evolvetech.dev/play/fairground/#/about) · [Render source](ARTWORK.md)

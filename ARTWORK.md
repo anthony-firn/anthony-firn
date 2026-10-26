@@ -39,3 +39,26 @@ as the final two arguments.
 `assets/emergence-cad.webp` shows the live Emergence CAD interface.
 `assets/emberwake.webp` is a capture of the browser game.
 These are application screenshots.
+
+`assets/emergence-drawings.webp` shows the CAD prototype's drawing output.
+`assets/fairground.webp` is a capture of the live Fairground app after
+dismissing its introductory topic-selection screen, without posting or
+signing in.
+
+## README headers
+
+`assets/profile-header.png` and `assets/profile-header-mobile.png` reuse
+the native avatar render above. The rendered subject stays intact. A Pillow
+script extends its edge colors behind the typography and positions the
+render for wide and narrow screens. No generative image model is used.
+
+Regenerate both headers from the profile repository root:
+
+```sh
+python render/profile_header.py
+```
+
+The script requires Pillow, the system Lato Regular/Heavy fonts and DejaVu
+Sans Mono. On Debian or Ubuntu, the font packages are `fonts-lato` and
+`fonts-dejavu-core`. The README uses a `<picture>` source to choose the
+mobile composition at viewport widths up to 600 pixels.
