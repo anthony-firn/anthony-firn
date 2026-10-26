@@ -1,4 +1,4 @@
-<img src="assets/avatar.png" alt="Copper and cyan geometric engineering avatar" width="160" align="right">
+<img src="assets/avatar.png" alt="Native Rust render of a metallic gyroid modeled with Emergence CAD" width="160" align="right">
 
 # Anthony Firn
 

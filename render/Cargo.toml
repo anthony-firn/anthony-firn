@@ -1,0 +1,17 @@
+[package]
+name = "profile-render"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Check out anthony-firn/emergence next to this profile repository.
+[dependencies]
+cad = { path = "../../emergence/fluid/crates/cad" }
+viz = { path = "../../emergence/fluid/crates/viz" }
+radiation = { path = "../../emergence/fluid/crates/radiation" }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+

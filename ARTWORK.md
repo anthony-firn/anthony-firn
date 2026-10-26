@@ -1,16 +1,41 @@
 # Profile artwork
 
-The avatar in `assets/avatar.png` was generated with the built-in imagegen tool.
-It is a geometric illustration, not a photograph. The generated master was
-downsampled to a 512 × 512 PNG for GitHub's avatar upload. The original existing
-GitHub avatar was not modified or included in this repository.
+`assets/avatar.png` is an actual render of procedural CAD geometry from
+[Emergence](https://github.com/anthony-firn/emergence). No generative image
+model, AI textures, stock images or composited backgrounds are used.
 
-## Generation prompt
+The subject is a 100 mm spherical sample of a gyroid network, with a 52 mm
+period. Emergence's CAD kernel intersects the implicit gyroid with a sphere
+and tessellates the result. Its native Rust RGB path tracer renders the
+mesh, a satin metal material, three rectangular studio lights and a dark
+ground plane. Geometry and material settings are prescribed for this scene;
+the optical parameters are artistic estimates.
 
-Create one finished square profile avatar for Anthony Firn, a software and computer engineer whose open-source studio is EvolveTech. Asset: a polished raster avatar, 1024 by 1024, that reads clearly in a small circular GitHub crop. Use a dark charcoal/navy background, a single centered sculptural geometric form derived from a nested cube / hypercube wireframe, warm copper-orange structural edges with a restrained cool cyan inner connection. The sculpture should feel like a precision machined engineering object, with subtle satin metal, controlled soft studio light, crisp construction and generous empty margins around the silhouette. Strong simple recognizable silhouette at 64 pixels. Professional, warm and technical; aesthetically related to CAD, physics simulation and graphics. No human face, no letters, no text, no brand names, no watermark, no complex background, no particle cloud, no excessive neon or science-fiction props.
+The 512 × 512 image uses 1,024 samples per pixel, deterministic sample seeds,
+up to 24 path interactions, the renderer's conventional geometry-guided noise
+filter, an exposure curve and sRGB encoding. There is no generative editing.
+The square composition leaves room for GitHub's circular avatar crop.
+
+## Reproduce
+
+The complete scene is in [`render/src/main.rs`](render/src/main.rs).
+It uses Emergence revision `7b515b2cedf2e50a6b42f876459a0e3d22f5eeef` and the
+dependencies in `render/Cargo.lock`.
+
+Check out `anthony-firn/emergence` alongside this repository, then run from
+the profile repository root:
+
+```sh
+cargo run --locked --release --manifest-path render/Cargo.toml -- render/output/final 512 1024
+cp render/output/final/avatar.png assets/avatar.png
+```
+
+The renderer also saves the unfiltered PNG, a linear-light PFM and run
+settings in the ignored output directory. Smaller previews can use `256 32`
+as the final two arguments.
 
 ## Project screenshots
 
 `assets/emergence-cad.webp` shows the live Emergence CAD interface.
 `assets/emberwake.webp` is a capture of the browser game.
-These are application screenshots, not generated artwork.
+These are application screenshots.
